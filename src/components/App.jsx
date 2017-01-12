@@ -1,19 +1,14 @@
 import React from 'react';
-
+import { Button } from 'antd-mobile';
 require('./App.css');
 
-export default () => <h1>こんにちは世界</h1>;
+// export default () => <h1>こんにちは世界</h1>;
 
-/*
+
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
-      <h1>Hello World</h1>
+        <Button>hh</Button>
     );
   }
 }
-*/

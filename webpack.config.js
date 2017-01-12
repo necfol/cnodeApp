@@ -1,6 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let extractCSS = new ExtractTextPlugin('stylesheets/[name].css');
+let extractLESS = new ExtractTextPlugin('stylesheets/[name].less');
 
 module.exports = {
   entry: './src/main.jsx',
@@ -12,9 +15,12 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.css$/,
-        include: path.resolve(__dirname, 'src'),
-        loader: 'style-loader!css-loader'
+        test: /\.css$/i,
+        loader: extractCSS.extract(['css','postcss'])
+      },
+      {
+        test: /\.less$/i,
+        loader: extractLESS.extract(['css','postcss','less'])
       },
       {
         test: /\.js[x]?$/,
@@ -41,7 +47,8 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')],
+    extensions: ['', '.web.js', '.js', '.jsx']
   },
   devServer: {
     historyApiFallback: true,
@@ -53,6 +60,8 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new OpenBrowserPlugin({ url: 'http://127.0.0.1:8080' })
+    new OpenBrowserPlugin({ url: 'http://127.0.0.1:8080' }),
+    extractCSS,
+    extractLESS
   ]
 };

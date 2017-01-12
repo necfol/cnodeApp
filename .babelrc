@@ -1,9 +1,7 @@
 {
   "presets": [ "es2015", "stage-0", "react"],
-
   /* if you want to use babel runtime, uncomment the following line */
-  // "plugins": ["transform-runtime"],
-
+  "plugins": [["import", { "style": "css", "libraryName": "antd-mobile" }]],
   "env": {
     "build": {
       "optional": ["optimisation", "minification"]
