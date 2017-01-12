@@ -8,7 +8,7 @@ require('./App.css');
 export default class App extends React.Component {
   render() {
     return (
-        <Button>hh</Button>
+        <Button className="btn" loading>loading 按钮</Button>
     );
   }
 }

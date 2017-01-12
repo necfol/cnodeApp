@@ -15,12 +15,13 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.css$/i,
-        loader: extractCSS.extract(['css','postcss'])
+        test: /\.less$/i,
+        include: path.resolve(__dirname, 'node_modules'),
+        loader: 'style-loader!css-loader!less-loader'
       },
       {
-        test: /\.less$/i,
-        loader: extractLESS.extract(['css','postcss','less'])
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
       },
       {
         test: /\.js[x]?$/,

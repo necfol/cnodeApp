@@ -1,7 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
 const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let extractCSS = new ExtractTextPlugin('stylesheets/[name].css');
@@ -18,13 +16,17 @@ module.exports = {
   },
   module: {
     loaders: [
+      // {
+      //     test: /\.css$/i,
+      //     loader: extractCSS.extract(['css','postcss'])
+      // },
       {
-          test: /\.css$/i,
-          loader: extractCSS.extract(['css','postcss'])
+        test: /\.less$/i,
+        loader: extractLESS.extract(['css','postcss','less'])
       },
       {
-          test: /\.less$/i,
-          loader: extractLESS.extract(['css','postcss','less'])
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
       },
       {
         test: /\.js[x]?$/,
