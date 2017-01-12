@@ -1,0 +1,39 @@
+{
+  "name": "cnode",
+  "version": "0.0.1",
+  "description": "cnode客户端仿造",
+  "packageName": "cnode",
+  "main": "src/main.jsx",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --config webpack.production.config.js",
+    "dev": "webpack-dev-server --devtool eval --progress --hot --content-base",
+    "deploy": "npm run build && node ./build/deploy.js"
+  },
+  "dependencies": {
+    "babel-runtime": "6.x",
+    "react": "15.x",
+    "react-dom": "15.x"
+  },
+  "devDependencies": {
+    "babel-core": "6.x",
+    "babel-eslint": "7.x",
+    "babel-loader": "6.x",
+    "babel-plugin-transform-runtime": "6.x",
+    "babel-preset-es2015": "6.x",
+    "babel-preset-react": "6.x",
+    "babel-preset-stage-0": "6.x",
+    "css-loader": "~0.26.1",
+    "file-loader": "^0.9.0",
+    "open-browser-webpack-plugin": "0.0.3",
+    "style-loader": "~0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "latest",
+    "webpack-dev-server": "latest"
+  },
+  "keywords": [
+    "es6",
+    "web app",
+    "boilerplate"
+  ],
+  "author": "Necfol"
+}
