@@ -1,5 +1,5 @@
 import React from 'react';
-import Drawer from '../../component/Drawer/Drawer.jsx';
+import Tab from '../../component/tab/tab.jsx';
 import AppStyle from './App.less';
 export default class App extends React.Component {
   constructor(props){
@@ -10,7 +10,8 @@ export default class App extends React.Component {
   render() {
       return (
         <div className="app">
-            <Drawer></Drawer>
+            {this.props.children}
+            <Tab></Tab>
         </div>
       );
   }
