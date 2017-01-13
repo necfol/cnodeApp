@@ -1,6 +1,6 @@
 import React from 'react';
 import {  Drawer, List, NavBar } from 'antd-mobile';
-require('./App.css');
+require('./App.less');
 export default class App extends React.Component {
   constructor(props){
       super(props);

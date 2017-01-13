@@ -16,7 +16,7 @@ module.exports = {
     loaders: [
       {
         test: /\.less$/i,
-        include: path.resolve(__dirname, 'node_modules'),
+        include: path.resolve(__dirname, 'src'),
         loader: 'style-loader!css-loader!less-loader'
       },
       {
