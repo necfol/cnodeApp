@@ -1,10 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let extractCSS = new ExtractTextPlugin('stylesheets/[name].css');
-let extractLESS = new ExtractTextPlugin('stylesheets/[name].less');
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const extractCSS = new ExtractTextPlugin('stylesheets/[name].css');
+const extractLESS = new ExtractTextPlugin('stylesheets/[name].less');
 module.exports = {
   entry: './src/main.jsx',
   output: {
@@ -17,11 +16,11 @@ module.exports = {
       {
         test: /\.less$/i,
         include: path.resolve(__dirname, 'src'),
-        loader: 'style-loader!css-loader!less-loader'
+        loader: 'style-loader!css-loader!postcss-loader!less-loader'
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        loader: 'style-loader!css-loader!postcss-loader'
       },
       {
         test: /\.js[x]?$/,

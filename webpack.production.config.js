@@ -16,18 +16,14 @@ module.exports = {
   },
   module: {
     loaders: [
-      // {
-      //     test: /\.css$/i,
-      //     loader: extractCSS.extract(['css','postcss'])
-      // },
       {
-        test: /\.less$/i,
-        include: path.resolve(__dirname, 'src'),
-        loader: 'style-loader!css-loader!less-loader'
+          test: /\.less$/i,
+          include: path.resolve(__dirname, 'src'),
+          loader: 'style-loader!css-loader!postcss-loader!less-loader'
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
+          test: /\.css$/,
+          loader: 'style-loader!css-loader!postcss-loader'
       },
       {
         test: /\.js[x]?$/,
