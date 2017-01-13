@@ -1,6 +1,6 @@
 import React from 'react';
 import Tab from '../../component/tab/tab.jsx';
-import AppStyle from './App.less';
+import AppStyle from './App.css';
 export default class App extends React.Component {
   constructor(props){
       super(props);
@@ -10,7 +10,9 @@ export default class App extends React.Component {
   render() {
       return (
         <div className="app">
-            {this.props.children}
+            <div className="main">
+                {this.props.children}
+            </div>
             <Tab></Tab>
         </div>
       );
