@@ -16,7 +16,7 @@ export default class App extends React.Component {
   }
   render() {
       const sidebar = (<List>
-          {[...Array(20).keys()].map((i, index) => {
+          {[...[1,2,3,4,5].keys()].map((i, index) => {
               if (index === 0) {
                   return (<List.Item key={index}
                                      thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
