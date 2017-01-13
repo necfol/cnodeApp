@@ -1,9 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractCSS = new ExtractTextPlugin('stylesheets/[name].css');
-const extractLESS = new ExtractTextPlugin('stylesheets/[name].less');
 module.exports = {
   entry: './src/main.jsx',
   output: {
@@ -61,7 +58,5 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new OpenBrowserPlugin({ url: 'http://127.0.0.1:8080' }),
-    extractCSS,
-    extractLESS
   ]
 };

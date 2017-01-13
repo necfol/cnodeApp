@@ -1,9 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let extractCSS = new ExtractTextPlugin('stylesheets/[name].css');
-let extractLESS = new ExtractTextPlugin('stylesheets/[name].less');
 
 module.exports = {
   entry: [
@@ -65,8 +62,6 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production')
       }
-    }),
-    extractCSS,
-    extractLESS
+    })
   ]
 };
