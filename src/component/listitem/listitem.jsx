@@ -19,7 +19,7 @@ export default class ListItem extends React.Component {
             formateStyle: '#{{day}}天前',
         },{
             separate: -Infinity,
-            formateStyle: '#{{YYYY}}-#{{MM}}-#{{DD}} #{{HH}}:#{{mm}}',
+            formateStyle: '#{{YYYY}}-#{{MM}}-#{{DD}}',
         }])
     }
     render() {
