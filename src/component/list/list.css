@@ -2,3 +2,8 @@
     height: calc(100vh - 190px);
     overflow: auto;
 }
+.indicator-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
