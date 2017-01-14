@@ -1,15 +1,5 @@
-.index-main {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.nav-img {
-  background-color: #444;
-  flex: 0 0 auto;
-}
 .list-page {
-  height: 100px;
-  flex: 1 0 auto;
+  height: 100%;
   overflow: auto;
   background-color: #fff;
 }

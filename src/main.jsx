@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
 import App from './page/App/App';
+import Ask from './page/Ask/Ask';
 import Index from './page/Index/Index';
 import main from './main.css';
 ReactDOM.render(
@@ -11,7 +12,7 @@ ReactDOM.render(
             {/*<Route path="users" component={Users}>*/}
                 {/*<Route path="/user/:userId" component={User}/>*/}
             {/*</Route>*/}
-            {/*<Route path="*" component={NoMatch}/>*/}
+            <Route path="/ask" component={Ask}/>
         </Route>
     </Router>),
     document.body.appendChild(document.createElement('div'))

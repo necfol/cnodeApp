@@ -1,6 +1,7 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 import {  TabBar } from 'antd-mobile';
-require('./tab.less');
+require('./tab.css');
 export default class App extends React.Component {
     constructor(props){
         super(props);
@@ -8,12 +9,17 @@ export default class App extends React.Component {
             selectedTab: 'new'
         };
     }
+    componentWillMount() {
+        this.setState({
+            selectedTab: location.pathname.split('/')[1] || 'new',
+        });
+    }
     render() {
         return (
             <TabBar
                 unselectedTintColor="#949494"
                 tintColor="#33A3F4"
-                barTintColor="white"
+                barTintColor="#e8e9ec"
             >
                 <TabBar.Item
                     title="最新"
@@ -24,6 +30,8 @@ export default class App extends React.Component {
                     onPress={() => {
                         this.setState({
                             selectedTab: 'new',
+                        },() => {
+                            browserHistory.push('/');
                         });
                     }}
                     data-seed="logId"
@@ -38,6 +46,8 @@ export default class App extends React.Component {
                     onPress={() => {
                         this.setState({
                             selectedTab: 'ask',
+                        },() => {
+                            browserHistory.push('/ask');
                         });
                     }}
                     data-seed="logId1"

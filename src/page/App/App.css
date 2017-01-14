@@ -1,8 +1,14 @@
 .app {
   height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
   & .main {
-    height: calc(100vh - 100px);
     width: 100%;
+    flex: 1 0 auto;
+  }
+  & .nav-img {
+    background-color: #444;
+    flex: 0 0 auto;
   }
 }

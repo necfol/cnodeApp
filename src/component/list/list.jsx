@@ -14,11 +14,14 @@ export default class List extends React.Component {
         };
         this.loadItems = this.loadItems.bind(this);
     }
-    loadItems(page) {
+    loadItems(page, tab = '') {
         var that = this,
             url = this.props.url;
+        if(this.props.tab)
+            tab = this.props.tab;
         $.get(url, {
             page,
+            tab,
             limit: 10
         }).done(function (val) {
             if (val.success) {
