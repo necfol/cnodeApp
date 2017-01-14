@@ -54,11 +54,47 @@ export default class Info extends React.Component {
             Toast.fail('加载失败!!!', 1);
         });
     }
-    returnGood(item) {
-        if(item && item.length) {
-            return <img className="good" src={require('../../img/good_sel.png')} />
+    goodFunc(index, id) {
+        var self = this;
+        // todo 需要accessToken
+        // $.ajax({
+        //     url: Api.like + id + '/up',
+        //     data: {
+        //     },
+        //     crossDomain: true,
+        //     method: "POST"
+        // }).done(function (val) {
+        //     if (val.success) {
+        //         if(val.action == 'up')
+        //             self.state.replies[index].ups.length++;
+        //         else
+        //             self.state.replies[index].ups.length--;
+        //         self.setState({
+        //             replies: self.state.replies
+        //         });
+        //     } else {
+        //         Toast.fail('请求失败!!!', 1);
+        //     }
+        // }).fail(function (jqXhr) {
+        //     Toast.fail('请求失败!!!', 1);
+        // });
+        if(self.state.replies[index]['myup']) {
+            self.state.replies[index].ups.length--;
+            self.state.replies[index]['myup'] = false;
         } else {
-            return <img className="good" src={require('../../img/good.png')} />
+            self.state.replies[index].ups.length++;
+            self.state.replies[index]['myup'] = true;
+        }
+
+        self.setState({
+            replies: self.state.replies
+        });
+    }
+    returnGood(item, index) {
+        if(item.ups && item.ups.length) {
+            return <img onClick={this.goodFunc.bind(this, index, item.id)} className="good" src={require('../../img/good_sel.png')} />
+        } else {
+            return <img onClick={this.goodFunc.bind(this, index, item.id)} className="good" src={require('../../img/good.png')} />
         }
     }
     render() {
@@ -89,7 +125,7 @@ export default class Info extends React.Component {
                                                 <span className="author">{item.author.loginname}</span>
                                             </div>
                                             <div className="time-good">
-                                                {this.returnGood(item.ups)}
+                                                {this.returnGood(item, index)}
                                                 <span className="goodnum">{item.ups.length?item.ups.length:''}</span>
                                                 <span className="time">{this.fixtime(item.create_at)}</span>
                                             </div>
