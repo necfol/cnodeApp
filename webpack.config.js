@@ -52,7 +52,8 @@ module.exports = {
     hot: true,
     inline: true,
     progress: true,
-    host: '127.0.0.1',
+    // host: '127.0.0.1',
+    host: '0.0.0.0',
     port: 8080
   },
   plugins: [

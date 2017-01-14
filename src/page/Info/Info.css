@@ -1,0 +1,52 @@
+.info-page {
+    height: calc(100vh);
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    & .info-header {
+        height: 90px;
+        flex: 0 0 auto;
+        background-color: #444;
+        color: #fff;
+        & .title {
+              color: #fff;
+        }
+    }
+    & .main {
+        flex: 1 0 auto;
+        height: 100px;
+        overflow: auto;
+        & .title {
+            padding: 20px 30px;
+            line-height: 1.5;
+            font-size: 32px;
+        }
+        & .time-author {
+            display: flex;
+            padding-left: 30px;
+            padding-right: 30px;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            & .author-div {
+                display: flex;
+                align-items: center;
+                &  .avatar {
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    border: none;
+                }
+                &  .author {
+                    margin-left: 20px;
+                    color: #08c;
+                }
+            }
+        }
+        & .content-div {
+          margin-top: 30px;
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+    }
+}

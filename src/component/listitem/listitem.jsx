@@ -1,5 +1,6 @@
 import React from 'react';
 import fixTime from 'formattime';
+import { browserHistory } from 'react-router';
 require('./listitem.css')
 export default class ListItem extends React.Component {
     constructor(props) {
@@ -21,6 +22,11 @@ export default class ListItem extends React.Component {
             separate: -Infinity,
             formateStyle: '#{{YYYY}}-#{{MM}}-#{{DD}}',
         }])
+    }
+    goInfo(id) {
+        browserHistory.push({ pathname: '/info' , query: {
+            id
+        }});
     }
     render() {
         var typeEl,
@@ -45,7 +51,7 @@ export default class ListItem extends React.Component {
         }
 
         return (
-            <div className="item">
+            <div className="item" onClick={this.goInfo.bind(this, this.props.id)}>
                 <div className="title">{this.props.title}</div>
                 <div className="info">
                     <div className="type-div">

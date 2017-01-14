@@ -2,7 +2,7 @@ import React from 'react';
 import ListItem from '../listitem/listitem.jsx';
 import $ from 'jquery';
 import InfiniteScroll from 'react-infinite-scroller';
-import { ActivityIndicator } from 'antd-mobile';
+import { ActivityIndicator, Toast } from 'antd-mobile';
 require('./list.css')
 export default class List extends React.Component {
     constructor(props) {
@@ -47,7 +47,7 @@ export default class List extends React.Component {
                     loader={<div className="indicator-div"><ActivityIndicator animating /></div>}>
                     {
                         this.state.listData.map((item, index) => {
-                        return <ListItem key={index} title={item.title} time={item.last_reply_at} author={item.author} top={item.top} good={item.good} tab={item.tab}></ListItem>
+                        return <ListItem key={index} title={item.title} id={item.id} time={item.last_reply_at} author={item.author} top={item.top} good={item.good} tab={item.tab}></ListItem>
                         })
                     }
                 </InfiniteScroll>

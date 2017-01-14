@@ -4,5 +4,6 @@
 global.HOST = 'https://cnodejs.org/api/v1';
 
 export default {
-    getListData: global.HOST + '/topics'
+    getListData: global.HOST + '/topics',
+    getInfoData: global.HOST + '/topic/'
 }

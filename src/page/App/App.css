@@ -10,5 +10,8 @@
   & .nav-img {
     background-color: #444;
     flex: 0 0 auto;
+    & img {
+        width: 100%;
+      }
   }
 }

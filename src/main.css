@@ -7,5 +7,6 @@ article, aside, body, caption, dd, div, dl, dt, footer, form, h1, h2, h3, h4, h5
 
 body {
     font-family: "PingFang SC", "San Fransico", "source Han Sans", Roboto, -apple-system, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    background-color: #e8e9ec
+    background-color: #e8e9ec;
+    -webkit-overflow-scrolling: touch;
 }
