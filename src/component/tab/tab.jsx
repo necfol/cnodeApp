@@ -62,6 +62,8 @@ export default class App extends React.Component {
                     onPress={() => {
                         this.setState({
                             selectedTab: 'job',
+                        },() => {
+                            browserHistory.push('/job');
                         });
                     }}
                 >
