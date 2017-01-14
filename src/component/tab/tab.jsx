@@ -38,6 +38,21 @@ export default class App extends React.Component {
                 >
                 </TabBar.Item>
                 <TabBar.Item
+                    icon={require('../../img/share.png')}
+                    selectedIcon={require('../../img/share_sel.png')}
+                    title="分享"
+                    key="分享"
+                    selected={this.state.selectedTab === 'share'}
+                    onPress={() => {
+                        this.setState({
+                            selectedTab: 'share',
+                        },() => {
+                            browserHistory.push('/share');
+                        });
+                    }}
+                >
+                </TabBar.Item>
+                <TabBar.Item
                     icon={require('../../img/ask.png')}
                     selectedIcon={require('../../img/ask_sel.png')}
                     title="问答"
@@ -64,19 +79,6 @@ export default class App extends React.Component {
                             selectedTab: 'job',
                         },() => {
                             browserHistory.push('/job');
-                        });
-                    }}
-                >
-                </TabBar.Item>
-                <TabBar.Item
-                    icon={require('../../img/setting.png')}
-                    selectedIcon={require('../../img/setting_sel.png')}
-                    title="设置"
-                    key="设置"
-                    selected={this.state.selectedTab === 'setting'}
-                    onPress={() => {
-                        this.setState({
-                            selectedTab: 'setting',
                         });
                     }}
                 >

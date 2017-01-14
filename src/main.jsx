@@ -4,17 +4,16 @@ import { Router, Route, Link, IndexRoute, browserHistory } from 'react-router'
 import App from './page/App/App';
 import Ask from './page/Ask/Ask';
 import Job from './page/Job/Job';
+import Share from './page/Share/Share';
 import Index from './page/Index/Index';
 import main from './main.css';
 ReactDOM.render(
     (<Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={Index} />
-            {/*<Route path="users" component={Users}>*/}
-                {/*<Route path="/user/:userId" component={User}/>*/}
-            {/*</Route>*/}
             <Route path="/ask" component={Ask}/>
             <Route path="/job" component={Job}/>
+            <Route path="/share" component={Share}/>
         </Route>
     </Router>),
     document.body.appendChild(document.createElement('div'))

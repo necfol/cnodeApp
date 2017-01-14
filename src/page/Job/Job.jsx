@@ -1,8 +1,7 @@
 import React from 'react';
-import { NavBar, Icon, Toast } from 'antd-mobile';
 import List from '../../component/list/list.jsx';
 import Api from '../../api.js'
-require('./job.css');
+require('./Job.css');
 export default class Job extends React.Component {
     constructor(props) {
         super(props);

@@ -1,9 +1,8 @@
 import React from 'react';
-import { NavBar, Icon, Toast } from 'antd-mobile';
 import List from '../../component/list/list.jsx';
 import Api from '../../api.js'
-require('./index.css');
-export default class Index extends React.Component {
+require('./Ask.css');
+export default class Ask extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,7 +12,7 @@ export default class Index extends React.Component {
     render() {
         return (
             <div className="list-page">
-                <List url={this.state.getIndexListData}></List>
+                <List url={this.state.getIndexListData} tab="ask"></List>
             </div>
         );
     }
