@@ -8,10 +8,12 @@ export default class Info extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            info: {}
+            info: {},
+            replies: []
         };
         this.loadInfo = this.loadInfo.bind(this);
         this.fixtime = this.fixtime.bind(this);
+        this.returnGood = this.returnGood.bind(this);
     }
     componentWillMount() {
         this.loadInfo();
@@ -43,6 +45,7 @@ export default class Info extends React.Component {
                     time: val.data.create_at,
                     avatar: val.data.author.avatar_url,
                     content: val.data.content,
+                    replies: val.data.replies,
                 })
             } else {
                 Toast.fail('加载失败!!!', 1);
@@ -50,7 +53,13 @@ export default class Info extends React.Component {
         }).fail(function (jqXhr) {
             Toast.fail('加载失败!!!', 1);
         });
-
+    }
+    returnGood(item) {
+        if(item && item.length) {
+            return <img className="good" src={require('../../img/good_sel.png')} />
+        } else {
+            return <img className="good" src={require('../../img/good.png')} />
+        }
     }
     render() {
         return (
@@ -68,6 +77,28 @@ export default class Info extends React.Component {
                     </div>
                     <div className="content-div">
                         <div dangerouslySetInnerHTML={{__html: this.state.content}}></div>
+                    </div>
+                    <div className="comment-div">
+                        {
+                            this.state.replies.map((item, index) => {
+                                return (
+                                    <div key={index} className="comment-item">
+                                        <div className="avatar-time-good">
+                                            <div className="user">
+                                                <img className="avatar" src={item.author.avatar_url}/>
+                                                <span className="author">{item.author.loginname}</span>
+                                            </div>
+                                            <div className="time-good">
+                                                {this.returnGood(item.ups)}
+                                                <span className="goodnum">{item.ups.length?item.ups.length:''}</span>
+                                                <span className="time">{this.fixtime(item.create_at)}</span>
+                                            </div>
+                                        </div>
+                                        <div className="innercomment" dangerouslySetInnerHTML={{__html: item.content}}></div>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>

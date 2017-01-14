@@ -28,6 +28,7 @@
             justify-content: space-between;
             align-items: center;
             font-size: 22px;
+            color: #777;
             & .author-div {
                 display: flex;
                 align-items: center;
@@ -47,6 +48,56 @@
           margin-top: 30px;
           padding-left: 30px;
           padding-right: 30px;
+        }
+        & .comment-div {
+            &  .comment-item {
+                padding: 20px 30px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                & .avatar-time-good {
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 24px;
+                    display: flex;
+                    & .user {
+                        align-items: center;
+                        justify-content: space-between;
+                        display: flex;
+                        & .avatar {
+                          border-radius: 50%;
+                          width: 40px;
+                          height: 40px;
+                          border: none;
+                        }
+                        & .author {
+                            margin-left: 20px;
+                            color: #777;
+                        }
+                    }
+                    & .time-good {
+                        align-items: center;
+                        justify-content: space-between;
+                        display: flex;
+                        & .goodnum {
+                          color: #777;
+                          margin-top: 5px;
+                          font-size: 22px;
+                          margin-left: 4px;
+                        }
+                        & .time {
+                          margin-left: 20px;
+                          color: #777;
+                        }
+                        & .good {
+                          width: 20px;
+                          height: 20px;
+                          border: none;
+                        }
+                    }
+                }
+                & .innercomment {
+                    padding-top: 10px;
+                }
+            }
         }
     }
 }
